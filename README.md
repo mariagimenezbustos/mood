@@ -5,7 +5,9 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - TypeScript
 - Tailwind CSS
 - Prisma
-- PlanetScale -->
+- PlanetScale
+- LangChain
+- Zod -->
 
 ## Getting Started
 
