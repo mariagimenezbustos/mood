@@ -7,7 +7,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - Prisma
 - PlanetScale
 - LangChain
-- Zod -->
+- Zod
+- Recharts -->
 
 ## Getting Started
 
