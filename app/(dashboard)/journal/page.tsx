@@ -23,8 +23,8 @@ const JournalPage = async () => {
     const entries = await getEntries();
 
     return (
-        <div className="p-10 bg-zinc-400/10 h-full">
-            <h2 className="text-3xl mb-8">Journal</h2>
+        <div className="p-10 bg-neutral-800 h-full ">
+            <h2 className="text-3xl mb-8 text-neutral-200">Journal</h2>
 
             <div className="my-8">
                 <Question />

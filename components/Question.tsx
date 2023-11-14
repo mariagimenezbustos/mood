@@ -26,11 +26,11 @@ const Question = () => {
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <input disabled={loading} onChange={onChange} value={value} type="text" placeholder="Ask a question" className="border border-black/20 px-4 py-2 text-lg rounded-lg" />
-                <button disabled={loading} type="submit" className="bg-blue-400 px-4 py-2 rounded-lg text-lg" >Ask</button>
+                <input disabled={loading} onChange={onChange} value={value} type="text" placeholder="Ask a question" className="border border-black/20 bg-neutral-100 px-4 py-2 text-lg rounded-lg w-[calc(100%-112px)] mr-4 mb-4" />
+                <button disabled={loading} type="submit" className="bg-blue-600/80 px-4 py-2 rounded-lg text-lg w-24 text-neutral-200">ask</button>
             </form>
-            {loading && (<div>Loading...</div>)}
-            {response && (<div>{response}</div>)}
+            {loading && (<div className="text-neutral-200">Loading...</div>)}
+            {response && (<div className="text-neutral-200 text-justify">{response}</div>)}
         </div>
     )
 }
