@@ -57,7 +57,7 @@ This is a full-stack journal app that allows the user to add journal entries. Th
 
 - Start by installing dependencies, running `npm install` in the project directory.
 
-### Install Clerk
+### Install Clerk
 
 ```bash
 npm i @clerk/nextjs
