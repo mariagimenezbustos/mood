@@ -35,29 +35,28 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 -->
 
-# Mood
+# Mood: Full-Stack Journal App
 
-This is a full-stack journal app that allows the user to add journal entries. Thanks to AI, the entries get analyzed and the user can ask questions on them. There's also a graph that keeps track of the entries' sentiment.
+Mood is a full-stack journal app that allows the user to create journal entries, harnessing the power of AI for the analysis and enabling users to ask questions about their entries. The app also includes a sentiment graph to visualize the emotional tone of the entries.
 
 > **Note**
-> Please note that the app is not finished, and there are some details that are not displaying yet.
+> The app is mostly complete but may have some pending features yet to be displayed. Nevertheless, it is fully functional, offering a preview of the final product.
 
 ## Built With
 
-- Next.js
-- TypeScript
-- Tailwind CSS
-- Prisma
-- PlanetScale
-- LangChain
-- Zod
-- Recharts
+- **Framework:** Next.js
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Database:** Prisma and PlanetScale (Serverless SQL)
+- **AI Integration:** OpenAI
+- **Data Validation:** Zod
+- **Charting:** Recharts
 
 ## Setup
 
 - Start by installing dependencies, running `npm install` in the project directory.
 
-### Install Clerk
+### Install Clerk
 
 ```bash
 npm i @clerk/nextjs
@@ -97,4 +96,4 @@ NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/new-user
 
 ## Development
 
-In order to start the project, please run `npm run dev` in the terminal. You should be able to see the app in [localhost:3000](localhost:3000).
+In order to start the project, please run `npm run dev` in the terminal. You should be able to see the app in `localhost:3000`.
