@@ -19,16 +19,16 @@ const getData = async () => {
     const sum = analyses.reduce((acc, curr) => acc + curr.sentimentScore, 0);
     const avg = Math.round(sum / analyses.length);
 
-    return {analyses, avg};
+    return { analyses, avg };
 }
 
 const History = async () => {
-    const {avg, analyses} = await getData();
+    const { avg, analyses } = await getData();
     console.log(analyses);
 
     return (
         <div className="w-full h-full text-neutral-200">
-            <div className="mt-4 ml-4">{`Avg. Sentiment: ${avg}`}</div>
+            <div className="text-2xl mt-4 ml-4 mb-4">{`Avg. Sentiment: ${avg}`}</div>
             <div className="w-full h-full">
                 <HistoryChart data={analyses} />
             </div>

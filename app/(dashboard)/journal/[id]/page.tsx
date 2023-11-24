@@ -2,7 +2,7 @@ import Editor from "@/components/Editor";
 import { getUserFromClerkID } from "@/utils/auth";
 import { prisma } from "@/utils/db";
 
-const getEntry = async (id) => {
+const getEntry = async (id: string) => {
     const user = await getUserFromClerkID();
     const entry = await prisma.journalEntry.findUnique({
         where: {

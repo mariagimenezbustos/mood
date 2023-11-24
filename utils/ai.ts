@@ -1,6 +1,6 @@
 import { OpenAI } from "langchain/llms/openai"
-import z from "zod"
-import { StructuredOutputParser } from "langchain/output_parsers"
+import { z } from "zod"
+import { OutputFixingParser, StructuredOutputParser } from "langchain/output_parsers"
 import { PromptTemplate } from "langchain/prompts"
 import { Document } from "langchain/document"
 import { loadQARefineChain } from "langchain/chains"
@@ -35,25 +35,30 @@ const getPrompt = async (content) => {
     return input
 }
 
-export const analyze = async (content) => {
-    const input = await getPrompt(content)
+export const analyze = async (entry) => {
+    const input = await getPrompt(entry.content)
     const model = new OpenAI({ temperature: 0, modelName: "gpt-3.5-turbo" })
     const result = await model.call(input)
 
     try {
         return parser.parse(result)
     } catch (error) {
-        console.log(error)
+        const fixParser = OutputFixingParser.fromLLM(
+            new OpenAI({ temperature: 0, modelName: "gpt-3.5-turbo" }),
+            parser,
+        )
+        const fix = await fixParser.parse(result)
+        return fix
     }
 }
 
 export const qa = async (question, entries) => {
-    const docs = entries.map(entry => {
-        return new Document({
+    const docs = entries.map((entry) =>
+        new Document({
             pageContent: entry.content,
             metadata: { id: entry.id, createdAt: entry.createdAt }
         })
-    })
+    )
 
     const model = new OpenAI({ temperature: 0, modelName: "gpt-3.5-turbo" })
     const chain = loadQARefineChain(model)

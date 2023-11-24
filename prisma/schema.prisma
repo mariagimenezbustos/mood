@@ -16,10 +16,15 @@ model User {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  clerkId  String         @unique
-  email    String         @unique
+  clerkId  String          @unique
+  email    String          @unique
   entries  JournalEntry[]
-  Analysis Analysis[]
+  // Analysis Analysis[]
+  analysis EntryAnalysis[]
+
+  // added
+  name    String?
+  account Account?
 }
 
 model JournalEntry {
@@ -32,12 +37,17 @@ model JournalEntry {
 
   content String @db.Text
 
-  analysis Analysis?
+  // analysis Analysis?
+  analysis EntryAnalysis?
+
+  // added
+  // status  JOURNAL_ENTRY_STATUS @default(DRAFT)
 
   @@unique([userId, id])
 }
 
-model Analysis {
+// model Analysis {
+model EntryAnalysis {
   id        String   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -46,15 +56,30 @@ model Analysis {
   entry   JournalEntry @relation(fields: [entryId], references: [id], onDelete: Cascade)
 
   userId String
-  user   User   @relation(fields: [userId], references: [id])
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   mood           String
   subject        String
   summary        String  @db.Text
-  color          String
+  color          String  @default("white")
   negative       Boolean
   sentimentScore Float   @default(0)
 
   @@unique([entryId])
   @@index([userId])
 }
+
+// added
+model Account {
+  id     String @id @default(uuid())
+  userId String
+  user   User   @relation(fields: [userId], references: [id])
+
+  @@unique([userId])
+}
+
+// enum JOURNAL_ENTRY_STATUS {
+//   DRAFT
+//   PUBLISHED
+//   ARCHIVED
+// }

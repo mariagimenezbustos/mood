@@ -3,7 +3,7 @@ import { prisma } from "@/utils/db";
 import { qa } from "@/utils/ai";
 import { NextResponse } from "next/server";
 
-export const POST = async (request) => {
+export const POST = async (request: Request) => {
     const { question } = await request.json();
     const user = await getUserFromClerkID();
 
@@ -12,7 +12,7 @@ export const POST = async (request) => {
             userId: user.id,
         },
         select: {
-            id: true,
+            // id: true,
             content: true,
             createdAt: true,
         }
