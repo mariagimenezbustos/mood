@@ -1,9 +1,9 @@
 import { getUserFromClerkID } from "@/utils/auth"
 import { prisma } from "@/utils/db"
-import { analyze } from "@/utils/ai"
-import { revalidatePath } from "next/cache"
 import { NextResponse } from "next/server"
 import { update } from "@/utils/actions"
+// import { analyze } from "@/utils/ai"
+// import { revalidatePath } from "next/cache"
 
 export const POST = async (request: Request) => {
     const data = await request.json();

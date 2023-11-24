@@ -33,44 +33,6 @@ export const createNewEntry = async () => {
     else throw new Error("Something went wrong on API server creating a new entry!")
 }
 
-
-// -------------------
-
-
-// export const createNewEntry = async () => {
-//     const res = await fetch(
-//         new Request(createURL('/api/journal'), {
-//             method: 'POST',
-//             body: JSON.stringify({ content: 'new entry' }),
-//         })
-//     )
-
-//     if (res.ok) {
-//         return res.json()
-//     } else {
-//         throw new Error('Something went wrong on API server!')
-//     }
-// }
-
-// export const updateEntry = async (id, updates) => {
-//     const res = await fetch(
-//         new Request(createURL(`/api/entry/${id}`), {
-//             method: 'PATCH',
-//             body: JSON.stringify({ updates }),
-//         })
-//     )
-
-//     if (res.ok) {
-//         return res.json()
-//     } else {
-//         throw new Error('Something went wrong on API server!')
-//     }
-// }
-
-
-// -------------------
-
-
 export const askQuestion = async (question) => {
     const res = await fetch(
         new Request(createURL(`/api/question`), {

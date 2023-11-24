@@ -19,7 +19,6 @@ model User {
   clerkId  String          @unique
   email    String          @unique
   entries  JournalEntry[]
-  // Analysis Analysis[]
   analysis EntryAnalysis[]
 
   // added
@@ -37,7 +36,6 @@ model JournalEntry {
 
   content String @db.Text
 
-  // analysis Analysis?
   analysis EntryAnalysis?
 
   // added
@@ -46,7 +44,6 @@ model JournalEntry {
   @@unique([userId, id])
 }
 
-// model Analysis {
 model EntryAnalysis {
   id        String   @id @default(uuid())
   createdAt DateTime @default(now())

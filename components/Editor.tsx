@@ -65,14 +65,6 @@ const Editor = ({ entry }) => {
 
                 <div>
                     <ul role="list">
-                        {/* {analysisData.map((item) => (
-                            <li key={item.name}
-                                className="px-2 py-4 flex items-center justify-between border-b border-t border-neutral-600"
-                            >
-                                <span className="text-lg font-semibold text-neutral-200 mr-4 ml-4">{item.name}</span>
-                                <span className="text-neutral-200 mr-4">{item.value}</span>
-                            </li>
-                        ))} */}
                         <li className="px-2 py-4 flex items-center justify-between border-b border-t border-neutral-600">
                             <span className="text-lg font-semibold text-neutral-200 mr-4 ml-4">Subject</span>
                             <span className="text-neutral-200 mr-4">{currEntry.analysis.subject}</span>
@@ -84,7 +76,7 @@ const Editor = ({ entry }) => {
                         </li>
 
                         <li className="px-2 py-4 flex items-center justify-between border-b border-t border-neutral-600">
-                            <span className="text-lg font-semibold text-neutral-200 mr-4 ml-4">Subject</span>
+                            <span className="text-lg font-semibold text-neutral-200 mr-4 ml-4">Negative</span>
                             <span className="text-neutral-200 mr-4">{currEntry.analysis.negative ? "True" : "False"}</span>
                         </li>
 

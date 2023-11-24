@@ -4,7 +4,7 @@ import { prisma } from "@/utils/db";
 
 const getData = async () => {
     const user = await getUserFromClerkID();
-    const analyses = await prisma.analysis.findMany({
+    const analyses = await prisma.entryAnalysis.findMany({
         where: {
             userId: user.id,
         },
