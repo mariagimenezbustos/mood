@@ -37,10 +37,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 # Mood: Full-Stack Journal App
 
-Mood is a full-stack journal app that allows the user to create journal entries, harnessing the power of AI for the analysis and enabling users to ask questions about their entries. The app also includes a sentiment graph to visualize the emotional tone of the entries.
-
-> **Note**
-> The app is mostly complete but may have some pending features yet to be displayed. Nevertheless, it is fully functional, offering a preview of the final product.
+Mood is a full-stack journal app that allows the user to create, update and delete journal entries, harnessing the power of AI for the analysis and enabling users to ask questions about their entries. The app also includes a sentiment graph to visualize the emotional tone of the entries.
 
 ## Built With
 
@@ -51,6 +48,12 @@ Mood is a full-stack journal app that allows the user to create journal entries,
 - **AI Integration:** OpenAI
 - **Data Validation:** Zod
 - **Charting:** Recharts
+
+## Demo Video
+
+For a visual walkthrough of the app, check out the video below:
+
+https://github.com/mariagimenezbustos/mood/assets/134734638/6aa7307b-caca-4bf7-b693-dd61207cd3a0
 
 ## Setup
 
