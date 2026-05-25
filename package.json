@@ -19,7 +19,7 @@
     "eslint-config-next": "16.1.6",
     "langchain": "^1.2.3",
     "next": "16.2.6",
-    "postcss": "8.4.31",
+    "postcss": "8.5.10",
     "react": "18.2.0",
     "react-autosave": "^0.4.3",
     "react-dom": "18.2.0",
